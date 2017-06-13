@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+
+    <head>
+        <meta charset="utf-8">
+        <title>Modest Fashion by Sara</title>
+        <meta name="description" content="">
+
+        <link rel="icon"  type="image/png" href="http://courses.cs.niu.edu/~z1694447/csci675/images/favicon.png">
+        <link href='http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+		<script src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/style.css">
+        
+        <script type="text/javascript">
+            jQuery('.img_slider').hide();//hide the background while the images load, ready to fade in later
+        </script>
+
+
+
+    </head>
+    <body>
+		<div class="content_aligned">
+            <header>
+                
+                <div id="main-header">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-3">
+                                <div class="logo">
+                                    <a href="#"><img src="images/logo.png" title="Modest fashion | Sara's Picks" alt="Modest fashion | Sara's Picks" ></a>
+                                </div>
+                            </div>
+                            <div class="col-md-9">
+                                <div class="main-menu">
+                                    <ul>
+                                        <li><a>Home</a></li>
+                                        <li><a href="picks-1.html">Sara's picks</a></li>
+                                        <li><a href="fashion-finds.html">Fashion Finds</a></li>
+                                        <li><a href="about.html">About</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            
+
+        
+                    <ul class="bg_large">
+                        <div class="slider-caption">
+                            <h1>Apparel for Liberation</h1>
+                            
+                            <a href="picks-1.html">View my picks</a>
+                        </div>
+                      <div class="img_slider">
+                            <img class="active" src="images/slider1.jpg" alt=""/>
+                            <img src="images/slider2.jpg" alt=""   />
+                            <img src="images/slider3.jpg" alt=""  />
+                      </div>    
+				  </ul>
+                  <p class="center_parag">Modest Fashion provides you with collections that speak to who you are within. I want to fill your closet with pieces you love 
+                            & styles that take you on a journey no matter where you are going.</p>
+
+
+
+            <div id="latest-blog">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="heading-section">
+                                <h2>My Latest Pick's</h2>
+                                <img src="images/under-heading.png" alt="" >
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="blog-post">
+                                <div class="blog-thumb">
+                                    <img src="images/mypick1.jpg" alt="" />
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="blog-post">
+                                <div class="blog-thumb">
+                                    <img src="images/mypick2.jpg" alt="" />
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="blog-post">
+                                <div class="blog-thumb">
+                                    <img src="images/mypick3.jpg" alt="" />
+                                </div>
+                                
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="blog-post">
+                                <div class="blog-thumb">
+                                    <img src="images/mypick4.jpg" alt="" />
+                                </div>
+                               
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="blog-post">
+                                <div class="blog-thumb">
+                                    <img src="images/mypick5.jpg" alt="" />
+                                </div>
+                               
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4 col-sm-6">
+                            <div class="blog-post">
+                                <div class="blog-thumb">
+                                    <img src="images/mypick6.jpg" alt="" />
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+			<footer>
+                <div class="container">
+                    <div class="top-footer">
+                        <div class="row">
+                            <div class="col-md-9">
+                                <div class="subscribe-form">
+                                    <span>Get in touch with me</span>
+                                    <form method="get" class="subscribeForm" onsubmit="return verify_form();">
+                                        <input id="subscribe" type="text" placeholder="Enter email address"/>
+                                        <input type="submit" id="submitButton" />
+                                    </form>
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="social-bottom">
+                                    <span>Follow me here:</span>
+                                    <ul>
+                                        <li><a href="#" class="fa fa-facebook"></a></li>
+                                        <li><a href="#" class="fa fa-twitter"></a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="bottom-footer">
+                        <p>Copyright © 2014 <a href="#">Modest Fashion | Sara's Picks</a></p>
+                    </div>
+                    
+                </div>
+            </footer>
+		</div>
+    </body>
+	<script>
+        function cycleImages(){
+          var $active = jQuery('.img_slider .active');
+          var $next = (jQuery('.img_slider .active').next().length > 0) ? jQuery('.img_slider .active').next() : jQuery('.img_slider img:first');
+          $next.css('z-index',2);//move the next image up the pile
+          $active.fadeOut(1500,function(){//fade out the top image
+          $active.css('z-index',1).show().removeClass('active');//reset the z-index and unhide the image
+          $next.css('z-index',3).addClass('active');//make the next image the top one
+          });
+        }
+
+        jQuery(window).load(function(){
+            jQuery('.img_slider').fadeIn(1000);//fade the background back in once all the images are loaded
+              // run every 7s
+              setInterval('cycleImages()', 2000);
+        })
+        function IsEmail(email) {
+            var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+          return regex.test(email);
+        }
+        function verify_form(){
+            
+            var email = jQuery('#subscribe').val();
+            if(IsEmail(email)){
+                alert('Thanks for your email');
+            }
+            else{
+                alert('Please correct the email address!');
+            }
+            return false;
+        }
+    </script>
+    
+	
+</html>
